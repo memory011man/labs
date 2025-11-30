@@ -1,0 +1,49 @@
+
+Paste this:
+# SSH server example configuration for key-only authentication.
+# Use this as a reference for /etc/ssh/sshd_config.
+
+# Listen on port 22 (default). Change only if you understand the tradeoffs.
+Port 22
+
+# Protocol 2 is the modern default; no need to set an explicit Protocol line.
+
+# Host keys are typically managed by the OS/package. Keep defaults unless you know otherwise.
+# HostKey /etc/ssh/ssh_host_ed25519_key
+# HostKey /etc/ssh/ssh_host_rsa_key
+
+# Authentication
+PubkeyAuthentication yes
+PasswordAuthentication no
+PermitRootLogin no
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+UsePAM yes
+
+# Limit auth attempts and sessions
+MaxAuthTries 3
+MaxSessions 10
+LoginGraceTime 30
+
+# Optionally restrict who can log in
+# AllowUsers user
+# or:
+# AllowGroups ssh-users
+
+# Keepalive / connection discipline
+ClientAliveInterval 300
+ClientAliveCountMax 2
+
+# Tunneling and forwarding
+X11Forwarding no
+AllowTcpForwarding yes
+AllowAgentForwarding yes
+AllowStreamLocalForwarding yes
+PermitTunnel no
+
+# DNS lookups on client addresses (often safe to disable for speed)
+UseDNS no
+
+# Logging
+LogLevel INFO
+Save + Exit
