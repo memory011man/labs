@@ -1,3 +1,6 @@
+From:
+cd ~/brucehaus/labs/ssh-hardening
+nano config/sshd_config.example
 
 Paste this:
 # SSH server example configuration for key-only authentication.
@@ -47,3 +50,4 @@ UseDNS no
 # Logging
 LogLevel INFO
 Save + Exit
+
