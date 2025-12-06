@@ -1,15 +1,8 @@
-From:
-cd ~/brucehaus/labs/ssh-hardening
-nano config/sshd_config.example
-
-Paste this:
 # SSH server example configuration for key-only authentication.
 # Use this as a reference for /etc/ssh/sshd_config.
 
 # Listen on port 22 (default). Change only if you understand the tradeoffs.
 Port 22
-
-# Protocol 2 is the modern default; no need to set an explicit Protocol line.
 
 # Host keys are typically managed by the OS/package. Keep defaults unless you know otherwise.
 # HostKey /etc/ssh/ssh_host_ed25519_key
@@ -50,4 +43,5 @@ UseDNS no
 # Logging
 LogLevel INFO
 Save + Exit
+
 
